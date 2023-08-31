@@ -1,0 +1,24 @@
+package sample.lombok;
+
+import java.util.Arrays;
+import java.util.List;
+
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
+public class Main {
+    
+    public static void main(String[] args) {
+        Main a = new Main();
+        Main b = new Main();
+        
+        System.out.println("a.hash = " + a.hashCode());
+        System.out.println("b.hash = " + b.hashCode());
+        System.out.println(a.equals(b));
+    }
+    
+    private int id = 100;
+    private String value = "hoge";
+    private List<String> list = Arrays.asList("fizz", "buzz");
+}
+

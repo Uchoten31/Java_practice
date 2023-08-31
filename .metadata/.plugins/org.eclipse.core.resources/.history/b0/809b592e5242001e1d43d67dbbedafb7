@@ -1,0 +1,11 @@
+package com.example.springDemo.repository.mybatis;
+
+public interface MovieMapper {
+	
+	List<Movie> find(@Param("movieName") String movieName, @Param("directorName") String directorName);
+	
+	Movie get(@Param("movieId") String movieId);
+	
+	Movie lock(@Param("movieId") String movieId);
+	
+}

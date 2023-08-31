@@ -1,0 +1,15 @@
+package javaOOP2;
+
+public class Q216 {
+	public static void main(String[] args) {
+        // 分子変数
+        int numerator = 4200;
+        // 分母変数
+        int denominator;
+        // コマンドライン引数を整数値に変換する
+        denominator = Integer.parseInt(args[0]);
+        // 割り算結果変数に代入
+        int result = numerator / denominator;
+        System.out.println("割り算の結果は" + result + "です");
+    }
+}

@@ -1,0 +1,29 @@
+package com.example.springDemo.repository;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.example.springDemo.repository.mybatis.MovieMapper;
+
+/**
+ * MoviesRepository インタフェースを実装した、実行クラス
+ * @Repository アノテーションによって、repository に DI をおこないます。
+ * SqlSessionTemplate クラスによって、Mapper インタフェースを読み込み、
+ * MySQL を操作するメソッドを利用できるようになります。
+ */
+
+@Repository
+public class MovieRepositoryImpl implements MovieRepository {
+    private final SqlSessionTemplate sqlSessionTemplate;
+
+    public MovieRepositoryImpl(SqlSessionTemplate sqlSessionTemplate) {
+        this.sqlSessionTemplate = sqlSessionTemplate;
+    }
+    
+    @Override
+    public List<Movie> findList(String movieName, String directorName){
+    	List<Movie> movie = this.sqlSessionTemplate.getMapper(MovieMapper.class).find(movieName, directorName);
+    	return movie;
+    }
+	
+}

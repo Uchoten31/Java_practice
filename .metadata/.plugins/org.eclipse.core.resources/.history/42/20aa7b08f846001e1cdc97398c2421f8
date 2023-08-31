@@ -1,0 +1,51 @@
+package javaOOP2;
+
+public class Q218 {
+	
+	public static void main(String[] args) {
+        // 部下クラスのインスタンスを生成
+        Subordinate sub = new Subordinate("有吉");
+        // 上司クラスのインスタンスを生成
+        Boss boss = new Boss("上島", sub);
+        // 上司の働くメソッドを実行
+        boss.work("得意先との取引");
+    }
+}
+
+// トラブル例外クラス
+class TroubleException extends Exception {}
+
+
+// 社員抽象クラス
+abstract class Employee {
+    // 社員名
+    protected String name;
+    // 働く抽象メソッド
+    public abstract void work(String workName) throws TroubleException;
+}
+
+
+// ここに上司クラスを作成してください
+class Boss extends Employee {
+	
+	private Subordinate sub;	// 直属の部下
+	
+	// コンストラクタ
+	public Boss(String name, Subordinate sub) {
+		super.name = name;
+		this.sub = sub;
+	}
+	
+	// 働くメソッドを実装
+	public void work(String workName) {
+		try {
+			System.out.println("さて、今回の" + workName + "は部下の" + name + "にまかせよう！");
+	
+		}
+	}
+	
+}
+
+// ここに部下クラスを作成してください
+
+

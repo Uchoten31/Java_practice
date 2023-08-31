@@ -1,0 +1,47 @@
+package com.example.springDemo.service;
+
+import org.springframework.stereotype.Service;
+
+import com.example.springDemo.domain.Movie;
+import com.example.springDemo.domain.MovieList;
+
+@Service
+public class MovieServiceImpl implements MovieService {
+	
+	private final MovieRepository repository;
+	
+	public MovieServiceImpl(MovieRepository repository) {
+		this.repository = repository;
+	}
+
+	@Override
+	public MovieList find(String movieName, String directorName) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+	@Override
+	public Movie get(String movieId) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+	@Override
+	public void add(Movie movie) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+	@Override
+	public void set(Movie movie) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+	@Override
+	public void remove(String movieId) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+}

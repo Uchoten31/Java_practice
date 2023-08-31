@@ -1,0 +1,14 @@
+package sample.lombok;
+
+import lombok.Getter;
+import lombok.Setter;
+
+
+@ToString(exclude = "age")
+public class Sample {
+
+	private String id;
+	private String name;
+	private int age;
+	
+}

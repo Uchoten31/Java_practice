@@ -1,0 +1,18 @@
+package com.example.springDemo.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.springDemo.service.MovieService;
+
+@RestController
+@RequestMapping("api/movie")
+public class MoviesRestController {
+	
+	private final MovieService service;
+	
+	public MoviesRestController(MovieService service) {
+		this.service = service;
+	}
+	
+}

@@ -1,0 +1,19 @@
+package com.example.springDemo.repository;
+
+import org.springframework.stereotype.Repository;
+
+/**
+ * MoviesRepository インタフェースを実装した、実行クラス
+ * @Repository アノテーションによって、repository に DI をおこないます。
+ * SqlSessionTemplate クラスによって、Mapper インタフェースを読み込み、
+ * MySQL を操作するメソッドを利用できるようになります。
+ */
+
+@Repository
+public class RepositoryImpl implements MovieRepository {
+	private final SqlSessionTemplate sqlSessionTemplate;
+	
+	public MovieRepositoryImpl(SqlSessionTemplate sqlSessionTemplate) {
+		
+	}
+}

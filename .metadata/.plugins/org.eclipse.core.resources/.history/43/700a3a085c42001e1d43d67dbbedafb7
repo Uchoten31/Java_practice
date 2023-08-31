@@ -1,0 +1,9 @@
+package com.example.springDemo.configuration;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+@ConstructorBinding
+@ConfigurationProperties(prefic = "dbcp2.jdbc")
+public class DataSourceConfigurationProperties {
+
+}

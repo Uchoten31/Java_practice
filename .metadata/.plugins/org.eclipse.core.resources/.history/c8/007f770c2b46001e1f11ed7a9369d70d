@@ -1,0 +1,22 @@
+package javaBasic1;
+
+public class Q114 {
+	public static void main(String[] args) {
+        int x = 6;
+        int y = 79;
+        int z = 54;
+        // minメソッドの呼び出し
+        System.out.println("整数" + x + "、" + y + "、" + z + "の中で最小の値は");
+        System.out.println(min(x, y, z) + "です");
+    }
+    // ここにminメソッドを定義してください
+	public static int min(int value1, int value2, int value3) {
+		int min = value1;
+		if(value1 > value2) {
+			min = value2;
+		} if(min > value3) {
+			min = value3;
+		}
+		return min;
+	}
+}

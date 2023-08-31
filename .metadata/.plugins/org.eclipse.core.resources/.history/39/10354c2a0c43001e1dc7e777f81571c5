@@ -1,0 +1,16 @@
+package sample.lombok;
+
+public class Main {
+
+    public static void main(String... args) {
+        method("hoge");
+        method(null);
+    }
+    
+    private static void method(String value) {
+        System.out.println(value);
+    }
+}
+
+
+

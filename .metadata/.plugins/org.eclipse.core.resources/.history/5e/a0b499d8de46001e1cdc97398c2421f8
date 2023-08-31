@@ -1,0 +1,91 @@
+package javaOOP2;
+
+public class Q214 {
+	public static void main(String[] args) {
+        // 鳥配列オブジェクトの生成
+        Bird[] birds = {new Swallow(), new Penguin(), new Atthis()};
+        
+        // 鳥たちの紹介
+        // ここからコーディングしてください
+        
+        for(Bird bird : birds) {
+        	
+        	// 食べるメソッドを実行
+//        	bird.eat();
+        	
+        	// もし飛行可能の鳥ならば飛ぶメソッドを実行
+        	if(bird instanceof Flyable) {
+        		((Flyable) bird).fly();
+        	}
+        	
+        	// もし水泳可能の鳥ならば泳ぐメソッドを実行
+        	if(bird instanceof Swimable) {
+        		((Swimable) bird).swim();
+        	}
+        }
+        
+    }
+}
+// 飛行可能インタフェース
+interface Flyable {
+    // 飛ぶ抽象メソッド
+    void fly();
+}
+
+// 水泳可能インタフェース
+interface Swimable {
+    // 泳ぐ抽象メソッド
+    void swim();
+}
+
+// 食事可能インタフェース
+interface Eatable {
+    // 食べる抽象メソッド
+    void eat();
+}
+
+// 鳥抽象クラス
+abstract class Bird implements Eatable {}
+
+// ここにつばめクラスを作成してください
+class Swallow extends Bird implements Flyable {
+	// 飛ぶメソッドを実装
+	public void fly() {
+		System.out.println("つばめがスイスイ飛んでいます。");
+	}
+	// 食べるメソッドを実装
+	public void eat() {
+		System.out.println("つばめが虫を食べました。");
+	}
+	
+	
+}
+
+// ここにペンギンクラスを作成してください
+class Penguin extends Bird implements Swimable {
+	// 泳ぐメソッドを実装
+	public void swim() {
+		System.out.println("ペンギンがスイスイ泳いでいます。");
+	}
+	// 食べるメソッドを実装
+	public void eat() {
+		System.out.println("ペンギンが魚を食べました。");
+	}
+}
+
+
+// ここにカワセミクラスを作成してください
+class Atthis extends Bird implements Flyable, Swimable {
+	// 飛ぶメソッドを実装
+	public void fly() {
+		System.out.println("カワセミがスイスイ飛んでいます。");
+	}
+	// 泳ぐメソッドを実装
+	public void swim() {
+		System.out.println("カワセミがスイスイ泳いでいます。");
+	}
+	// 食べるメソッドを実装
+	public void eat() {
+		System.out.println("カワセミが小魚を食べました。");
+	}
+}

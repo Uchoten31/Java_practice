@@ -1,0 +1,94 @@
+package javaOOP2;
+
+import java.util.Random;
+
+public class Q218 {
+	
+	public static void main(String[] args) {
+        // 部下クラスのインスタンスを生成
+        Subordinate sub = new Subordinate("有吉");
+        // 上司クラスのインスタンスを生成
+        Boss boss = new Boss("上島", sub);
+        // 上司の働くメソッドを実行
+        boss.work("得意先との取引");
+    }
+}
+
+// トラブル例外クラス
+class TroubleException extends Exception {}
+
+
+// 社員抽象クラス
+abstract class Employee {
+    // 社員名
+    protected String name;
+    // 働く抽象メソッド
+    public abstract void work(String workName) throws TroubleException;
+}
+
+
+// ここに上司クラスを作成してください
+class Boss extends Employee {
+	
+	private Subordinate sub;	// 直属の部下
+	
+	// コンストラクタ
+	public Boss (String name, Subordinate sub) {
+		super.name = name;
+		this.sub = sub;
+	}
+	
+	// 働くメソッドを実装
+	public void work(String workName) {
+		System.out.println("さて、今回の" + workName + "は部下の" + sub.name + "にまかせよう！");
+		
+		try {
+			sub.work(workName);
+			// 無事任務を果たした場合
+			System.out.println(sub.name + "君、よくやった！");
+			System.out.println("さすが私の右腕だ！");
+			
+		} catch (TroubleException e) {
+			// 部下がトラブルを起こした場合
+			System.out.println("申し訳ございません・・・");
+			System.out.println(sub.name + "が大変失礼いたしました・・・");
+			System.out.println("上司のわたくし" + this.name + "の監督不行き届きでございます・・・");
+		} 
+		
+	}
+	
+}
+
+// ここに部下クラスを作成してください
+class Subordinate extends Employee {
+	
+	// コンストラクタ
+	public Subordinate (String name) {
+		super.name = name;
+	}
+	
+	// 名前を取得するゲッター
+	public String getName() {
+		return name;
+	}
+	
+	// 働くメソッドを実装
+	public void work(String workName) throws TroubleException {
+		
+		System.out.println("今回の" + workName + "はわたくし" + this.name + "が担当いたします");
+		System.out.println(workName + "中・・・");
+		
+		Random ran = new Random();
+		if(ran.nextBoolean()) {
+			System.out.println("ふざけるな、バカ野郎！");
+			throw new TroubleException();
+		} else {
+			System.out.println("今回の" + workName + "はわたくし" + this.name + "が無事任務を果たしました");
+		}
+		
+		
+	}
+		
+		
+}
+

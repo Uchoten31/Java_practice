@@ -1,0 +1,15 @@
+package practice1_class;
+
+public class Calculator {
+	
+	double tax;
+	
+	public void setTax(double tax) {
+		this.tax = tax;
+	}
+	
+	public int calc(int price) {
+		return (int)(price * (tax + 1) );
+	}
+
+}

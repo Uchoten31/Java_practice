@@ -1,0 +1,8 @@
+package com.example.springDemo.configuration;
+
+
+@Configuration
+@EnableConfigurationProperties(DataSourceConfigurationProperties.class)
+public class DataSourceConfiguration {
+
+}

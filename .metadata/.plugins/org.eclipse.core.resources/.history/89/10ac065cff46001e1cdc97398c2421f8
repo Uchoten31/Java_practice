@@ -1,0 +1,31 @@
+package JavaOOP3;
+
+import java.io.*;
+
+public class Q301 {
+	public static void main(String[] args) {
+		
+        // ここにファイルコピー処理を記述してください
+		BufferdReader br = null;
+		PrintWritter pw = null;
+		
+		if(args.length != 2) {
+			System.out.println("2つのファイル名を正しく指定してください");
+            return;
+        }
+		
+		try {
+			// コピー元ファイル名のオープン
+			br = new BufferdReader(new FileReader(args[0]));
+			
+			// コピー先ファイル名のオープン
+			pw = new PrintWriter(new BufferdWritter(new FileWriter(args[0])));
+			
+			
+			
+		} catch () {
+			
+		} 
+		
+    }
+}

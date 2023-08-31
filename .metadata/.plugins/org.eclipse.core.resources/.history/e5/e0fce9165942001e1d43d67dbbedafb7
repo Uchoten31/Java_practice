@@ -1,0 +1,14 @@
+package com.example.springDemo.controller;
+
+
+@RestController
+@RequestMapping("api/movie")
+public class MoviesRestController {
+	
+	private final MovieService service;
+	
+	public MoviesRestController(MovieService service) {
+		this.service = service;
+	}
+	
+}
